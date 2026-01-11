@@ -1,5 +1,10 @@
-# de_zoomcamp_try1
+# Data Engineering Zoomcamp — Data Enthusiast Community
 
-#push_1
+This repository is used by the **Data Enthusiast Community** as a collaborative workspace to complete the **Data Engineering Zoomcamp** by DataTalks.Club.
 
-#push_2 18.17 P.M
+The goal of this repo is to:
+- Learn data engineering fundamentals through hands-on practice
+- Collaborate as a team using Git and GitHub
+- Build reproducible, well-structured data pipelines
+- Follow industry best practices in data engineering workflows
+
