@@ -1,7 +1,5 @@
 # Question 2. Understanding Docker networking and docker-compose
 
-### guidline by pijar
-
 ```yaml
 services:
   db:
@@ -34,6 +32,7 @@ volumes:
     name: vol-pgadmin_data
 ```
 
+### guidline by pijar
 - The question is which host and port that postgres use in this setting
 
 we need to know which is our PC port or Docker port, in this case
