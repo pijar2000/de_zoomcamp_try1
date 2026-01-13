@@ -46,9 +46,9 @@ https://docs.docker.com/reference/compose-file/services/?utm_source=copilot.com#
 
 based on this data, the fastest method is to try docker-compose up directly and find it yourself :
 
-1. go to your folder make docker-compose.yaml file
+1. go to your folder make `docker-compose.yaml ` file
 2. paste setup above
-3. go to terminal and run 'docker-compose up'
+3. go to terminal and run `docker-compose up`
 4. it shoul pulling pgadmin and postgres services
 5. after that try to open in http://localhost:8080/ (this is pc port for pgadmin)
 6. what is username and password? you can figure out in setup above
