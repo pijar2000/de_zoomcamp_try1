@@ -64,6 +64,7 @@ based on this data, the fastest method is to try docker-compose up directly and 
    
 12. fill the rest according to this setup
 
+```yaml
    db:
     container_name: postgres
     image: postgres:17-alpine
@@ -75,5 +76,6 @@ based on this data, the fastest method is to try docker-compose up directly and 
       - "5433:5432"
     volumes:
       - vol-pgdata:/var/lib/postgresql/data
+```
    
 13. The database should work, if that database work. Then you input the right hostname and port for the question
