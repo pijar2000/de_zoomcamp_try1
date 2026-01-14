@@ -10,10 +10,7 @@
 If we want bash, we need to overwrite `entrypoint`:
 
 ```bash
-docker run -it \
-    --rm \
-    --entrypoint=bash \
-    python:3.9.16-slim
+docker run -it --rm --entrypoint=bash python:3.9.16-slim
 ```
 5. Try to execute that command, but modify with task in question 1, it should be python:3.13
 6. After that pulling process, it become like this in terminal : root@xxxxx:/# (you should see something like this, it means you successfully go inside docker with bash)
