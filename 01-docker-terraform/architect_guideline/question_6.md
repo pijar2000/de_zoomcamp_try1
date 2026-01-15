@@ -30,7 +30,23 @@ Alright, now let's get into the main discussion. As stated in the question above
 Multiple joins is a process where we will perform multiple joins on the same table.
 
 For example:
-'''yaml
-  asdawdas
-'''
+```sql
+SELECT column_name
+FROM table_1 AS abbreviation_table_1
+JOIN table_2 AS abbreviation_table_2 ON abbreviation_table_1.id = abbreviation_table_2.id
+JOIN table_3 AS abbreviation_table_3 ON abbreviation_table_1.id = abbreviation_table_2.id
+WHERE condition;
+```
 
+Keep in mind that multiple joins can refer not only to different tables but also to the same table multiple times, as long as each join table has a different abbreviation.
+The rest, once we can use multiple joins on tables, we just need to use MAX() and GROUP BY() to find the largest tip per zone and use DATE, TO_CHAR(), or time comparisons to filter data based on a specific time.
+
+For example:
+```sql
+SELECT MAX(column_name)
+FROM table_1 AS abbreviation_table_1
+JOIN table_2 AS abbreviation_table_2 ON abbreviation_table_1.id = abbreviation_table_2.id
+JOIN table_3 AS abbreviation_table_3 ON abbreviation_table_1.id = abbreviation_table_2.id
+WHERE TO_CHAR(datetime column, format datetime) = condition;
+GROUP BY column_name
+```
