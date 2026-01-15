@@ -8,7 +8,10 @@ Before we start to do the task, makesure you have upload the dataset for the tas
 2. Taxi zone: https://github.com/DataTalksClub/nyc-tlc-data/releases/download/misc/taxi_zone_lookup.csv
 
 If you have problem with uploading parquet file to postgreSQL, you can follow tutorial in the link below:
+1. https://github.com/pijar2000/de_zoomcamp_dec/blob/main/01-docker-terraform/method-homework/parquet-ingestion.ipynb
 
+For csv file, you can follow tutorial in the link below:
+1. https://github.com/pijar2000/de_zoomcamp_dec/tree/main/01-docker-terraform/source-modul/docker-sql
 
 ### Guideline Tips And Trick
 1. test
