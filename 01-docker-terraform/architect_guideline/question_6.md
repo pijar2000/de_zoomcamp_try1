@@ -50,3 +50,7 @@ JOIN table_3 AS abbreviation_table_3 ON abbreviation_table_1.id = abbreviation_t
 WHERE TO_CHAR(datetime column, format datetime) = condition;
 GROUP BY column_name
 ```
+
+References:
+1. https://www.geeksforgeeks.org/sql/multiple-joins-in-sql/
+2. https://www.w3schools.com/sql/sql_groupby.asp
