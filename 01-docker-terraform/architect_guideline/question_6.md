@@ -54,3 +54,4 @@ GROUP BY column_name
 References:
 1. https://www.geeksforgeeks.org/sql/multiple-joins-in-sql/
 2. https://www.w3schools.com/sql/sql_groupby.asp
+3. https://www.datacamp.com/doc/postgresql/to_char
