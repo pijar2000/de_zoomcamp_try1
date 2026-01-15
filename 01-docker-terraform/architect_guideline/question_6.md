@@ -19,3 +19,9 @@ If so, for the first step, make sure that the table for the data already exists 
 
 <img width="299" height="88" alt="image" src="https://github.com/user-attachments/assets/9e070176-b3e0-4087-bc3b-b07806e61173" />
 
+To start querying, select the query tools menu at the top of the menu list, making sure that the query menu appears on the pgadmin display.
+
+<img width="466" height="75" alt="image" src="https://github.com/user-attachments/assets/414abb23-d25a-4499-bcb5-b1a74b6765ee" />
+<img width="1452" height="804" alt="image" src="https://github.com/user-attachments/assets/b3dc93e7-221d-4e99-b845-cfe46045fbb6" />
+
+
