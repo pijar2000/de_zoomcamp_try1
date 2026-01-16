@@ -39,6 +39,7 @@ WHERE condition;
 ```
 
 Keep in mind that multiple joins can refer not only to different tables but also to the same table multiple times, as long as each join table has a different abbreviation.
+
 The rest, once we can use multiple joins on tables, we just need to use MAX() and GROUP BY() to find the largest tip per zone and use DATE, TO_CHAR(), or time comparisons to filter data based on a specific time.
 
 For example:
@@ -53,7 +54,7 @@ GROUP BY column_name
 
 Once we understand the thought process and concept of the solution method, all we need to do is execute it.
 
-As shown in the table above, we have the green_taxi_trips_november_2025 and taxi_zone tables. The green taxi table stores trip data such as pickup location ID “PULocationID,” drop-off location ID “DOLocationID,” and the amount of tip per trip. However, we do not know which zone these IDs refer to, so to find out the zone for each ID, we need information from the zone table.
+As shown in the database table above, we have the green_taxi_trips_november_2025 and taxi_zone tables. The green taxi table stores trip data such as pickup location ID “PULocationID,” drop-off location ID “DOLocationID,” and the amount of tip per trip. However, we do not know which zone these IDs refer to, so to find out the zone for each ID, we need information from the zone table.
 
 Multiple joins will be the intermediary method for obtaining this information. Remember that multiple joins can refer not only to different tables but also to the same table as long as the table abbreviations are different and each table has a connecting parameter, such as “LocationID” in the zone table with ‘PULocatonID’ and “DOLocatonID” in the green taxi table.
 
