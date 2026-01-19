@@ -14,6 +14,7 @@ wget https://github.com/DataTalksClub/nyc-tlc-data/releases/download/misc/taxi_z
 ```
 
 ## Question 3. Counting short trips
+Guidline by pijar
 
 For the trips in November 2025 (lpep_pickup_datetime between '2025-11-01' and '2025-12-01', exclusive of the upper bound), how many trips had a `trip_distance` of less than or equal to 1 mile?
 
