@@ -32,6 +32,10 @@ df_parquet.to_csv("green_tripdata_2025-11.csv", index=False)
 
 - Don't forget to check the column type of the data with pandas first and make it in database with `CREATE TABLE`
 
+OR if you want to ingest the parquet data DIRECTLY to database, you could follow this guide
+
+https://github.com/pijar2000/de_zoomcamp_dec/blob/main/01-docker-terraform/parquet-ingestion.ipynb
+
 
 ## BACK TO THE QUESTION
  
