@@ -1,11 +1,11 @@
 # Workflow Orchestration
 
-Welcome to Module 2 of the Data Engineering Zoomcamp! This week, we’ll dive into workflow orchestration using [Kestra](https://go.kestra.io/de-zoomcamp/github). 
+Welcome to Module 2 of the Data Engineering Zoomcamp! This week, we’ll dive into workflow orchestration using [Kestra](https://go.kestra.io/de-zoomcamp/github).
 
 Kestra is an open-source, event-driven orchestration platform that simplifies building both scheduled and event-driven workflows. By adopting Infrastructure as Code practices for data and process orchestration, Kestra enables you to build reliable workflows with just a few lines of YAML.
 
 > [!NOTE]  
->You can find all videos for this week in this [YouTube Playlist](https://go.kestra.io/de-zoomcamp/yt-playlist).
+> You can find all videos for this week in this [YouTube Playlist](https://go.kestra.io/de-zoomcamp/yt-playlist).
 
 ---
 
@@ -18,36 +18,37 @@ Kestra is an open-source, event-driven orchestration platform that simplifies bu
 - [2.5 - Using AI for Data Engineering in Kestra](#25-using-ai-for-data-engineering-in-kestra)
 - [2.6 - Bonus](#26-bonus-deploy-to-the-cloud-optional)
 
-
 ## 2.1 Introduction to Workflow Orchestration
 
 In this section, you’ll learn the foundations of workflow orchestration, its importance, and how Kestra fits into the orchestration landscape.
 
 ### 2.1.1 - What is Workflow Orchestration?
-  
-Think of a music orchestra. There's a variety of different instruments. Some more than others, all with different roles when it comes to playing music. To make sure they all come together at the right time, they follow a conductor who helps the orchestra to play together. 
+
+Think of a music orchestra. There's a variety of different instruments. Some more than others, all with different roles when it comes to playing music. To make sure they all come together at the right time, they follow a conductor who helps the orchestra to play together.
 
 Now replace the instruments with tools and the conductor with an orchestrator. We often have multiple tools and platforms that we need to work together. Sometimes on a routine schedule, other times based on events that happen. That's where the orchestrator comes in to help all of these tools work together.
 
 A workflow orchestrator might do the following tasks:
+
 - Run workflows which contain a number of predefined steps
 - Monitor and log errors, as well as taking a number of extra steps when they occur
 - Automatically run workflows based on schedules and events
 
-In data engineering, you often need to move data from one place, to another, sometimes with some modifications made to the data in the middle. This is where a workflow orchestrator can help out by managing these steps, while giving us visibility into it at the same time. 
+In data engineering, you often need to move data from one place, to another, sometimes with some modifications made to the data in the middle. This is where a workflow orchestrator can help out by managing these steps, while giving us visibility into it at the same time.
 
-In this module, we're going to build our own data pipeline using ETL (Extract, Transform Load) with Kestra at the core of the operation, but first we need to understand a bit more about how Kestra works before we can get building! 
+In this module, we're going to build our own data pipeline using ETL (Extract, Transform Load) with Kestra at the core of the operation, but first we need to understand a bit more about how Kestra works before we can get building!
 
 #### Videos
+
 - **2.1.1 - What is Workflow Orchestration?**  
   [![2.1.1 - What is Workflow Orchestration?](https://markdown-videos-api.jorgenkh.no/url?url=https%3A%2F%2Fyoutu.be%2F-JLnp-iLins)](https://youtu.be/-JLnp-iLins)
 
-
 ### 2.1.2 - What is Kestra?
 
-Kestra is an open-source, infinitely-scalable orchestration platform that enables all engineers to manage business-critical workflows. 
+Kestra is an open-source, infinitely-scalable orchestration platform that enables all engineers to manage business-critical workflows.
 
 Kestra is a great choice for workflow orchestration:
+
 - Build with Flow code (YAML), No-code or with the AI Copilot - flexibility in how you build your workflows
 - 1000+ Plugins - integrate with all the tools you use
 - Support for any programming language - pick the right tool for the job
@@ -59,6 +60,7 @@ Kestra is a great choice for workflow orchestration:
   [![2.1.2 - What is Kestra?](https://markdown-videos-api.jorgenkh.no/url?url=https%3A%2F%2Fyoutu.be%2FZvVN_NmB_1s)](https://youtu.be/ZvVN_NmB_1s)
 
 ### Resources
+
 - [Quickstart Guide](https://go.kestra.io/de-zoomcamp/quickstart)
 - [What is an Orchestrator?](https://go.kestra.io/de-zoomcamp/what-is-an-orchestrator)
 
@@ -66,9 +68,10 @@ Kestra is a great choice for workflow orchestration:
 
 ## 2.2 Getting Started with Kestra
 
-In this section, you'll learn how to install Kestra, as well as the key concepts required to build your first workflow. Once our first workflow is built, we can extend this further by executing a Python script inside of a workflow. 
+In this section, you'll learn how to install Kestra, as well as the key concepts required to build your first workflow. Once our first workflow is built, we can extend this further by executing a Python script inside of a workflow.
 
 You will:
+
 1. Install Kestra using Docker Compose
 2. Learn the concepts of Kestra to build your first workflow
 3. Execute a Python script inside of a Kestra Flow
@@ -97,6 +100,7 @@ To shut down Kestra, go to the same directory and run the following command:
 ```bash
 docker compose down
 ```
+
 #### Add Flows to Kestra
 
 Flows can be added to Kestra by copying and pasting the YAML directly into the editor, or by adding via Kestra's API. See below for adding programmatically.
@@ -120,6 +124,7 @@ curl -X POST -u 'admin@kestra.io:Admin1234' http://localhost:8080/api/v1/flows/i
 curl -X POST -u 'admin@kestra.io:Admin1234' http://localhost:8080/api/v1/flows/import -F fileUpload=@flows/10_chat_without_rag.yaml
 curl -X POST -u 'admin@kestra.io:Admin1234' http://localhost:8080/api/v1/flows/import -F fileUpload=@flows/11_chat_with_rag.yaml
 ```
+
 </details>
 
 #### Videos
@@ -128,13 +133,14 @@ curl -X POST -u 'admin@kestra.io:Admin1234' http://localhost:8080/api/v1/flows/i
   [![2.2.1 - Installing Kestra](https://markdown-videos-api.jorgenkh.no/url?url=https%3A%2F%2Fyoutu.be%2FwgPxC4UjoLM)](https://youtu.be/wgPxC4UjoLM)
 
 #### Resources
-- [Install Kestra with Docker Compose](https://go.kestra.io/de-zoomcamp/docker-compose)
 
+- [Install Kestra with Docker Compose](https://go.kestra.io/de-zoomcamp/docker-compose)
 
 ### 2.2.2 - Kestra Concepts
 
 To start building workflows in Kestra, we need to understand a number of concepts.
-- [Flow](https://go.kestra.io/de-zoomcamp/flow) - a container for tasks and their orchestration logic. 
+
+- [Flow](https://go.kestra.io/de-zoomcamp/flow) - a container for tasks and their orchestration logic.
 - [Tasks](https://go.kestra.io/de-zoomcamp/tasks) - the steps within a flow.
 - [Inputs](https://go.kestra.io/de-zoomcamp/inputs) - dynamic values passed to the flow at runtime.
 - [Outputs](https://go.kestra.io/de-zoomcamp/outputs) - pass data between tasks and flows.
@@ -147,6 +153,7 @@ To start building workflows in Kestra, we need to understand a number of concept
 While there are more concepts used for building powerful workflows, these are the ones we're going to use to build our data pipelines.
 
 The flow [`01_hello_world.yaml`](flows/01_hello_world.yaml) showcases all of these concepts inside of one workflow:
+
 - The flow has 5 tasks: 2 log tasks and a sleep task
 - The flow takes an input called `name`.
 - There is a variable that takes the `name` input to generate a full welcome message.
@@ -156,10 +163,12 @@ The flow [`01_hello_world.yaml`](flows/01_hello_world.yaml) showcases all of the
 - We have a concurrency limit of 2 executions. Any further ones made while 2 are running will fail.
 
 #### Videos
+
 - **2.2.2 - Kestra Concepts**  
   [![2.2.2 - Kestra Concepts](https://markdown-videos-api.jorgenkh.no/url?url=https%3A%2F%2Fyoutu.be%2FMNOKVx8780E)](https://youtu.be/MNOKVx8780E)
 
 #### Resources
+
 - [Tutorial](https://go.kestra.io/de-zoomcamp/tutorial)
 - [Workflow Components Documentation](https://go.kestra.io/de-zoomcamp/workflow-components)
 
@@ -167,29 +176,30 @@ The flow [`01_hello_world.yaml`](flows/01_hello_world.yaml) showcases all of the
 
 Now that we've built our first workflow, we can take it a step further by adding Python code into our flow. In Kestra, we can run Python code from a dedicated file or write it directly inside of our workflow.
 
-While Kestra has a huge variety of plugins available for building your workflows, you also have the option to write your own code and have Kestra execute that based on schedules or events. This means you can pick the right tools for your pipelines, rather than the ones you're limited to. 
+While Kestra has a huge variety of plugins available for building your workflows, you also have the option to write your own code and have Kestra execute that based on schedules or events. This means you can pick the right tools for your pipelines, rather than the ones you're limited to.
 
 In our example Python workflow, [`02_python.yaml`](flows/02_python.yaml), our code fetches the number of Docker image pulls from DockerHub and returns it as an output to Kestra. This is useful as we can access this output with other tasks, even though it was generated inside of our Python script.
 
 #### Videos
+
 - **2.2.3 - Orchestrate Python Code**  
   [![2.2.3 - Orchestrate Python Code](https://markdown-videos-api.jorgenkh.no/url?url=https%3A%2F%2Fyoutu.be%2FVAHm0R_XjqI)](https://youtu.be/VAHm0R_XjqI)
 
 #### Resources
-- [How-to Guide: Python](https://go.kestra.io/de-zoomcamp/python)
 
+- [How-to Guide: Python](https://go.kestra.io/de-zoomcamp/python)
 
 ## 2.3 Hands-On Coding Project: Build Data Pipelines with Kestra
 
 Next, we're gonna build ETL pipelines for Yellow and Green Taxi data from NYC’s Taxi and Limousine Commission (TLC). You will:
+
 1. Extract data from [CSV files](https://github.com/DataTalksClub/nyc-tlc-data/releases).
 2. Load it into Postgres or Google Cloud (GCS + BigQuery).
 3. Explore scheduling and backfilling workflows.
 
 ### 2.3.1 Getting Started Pipeline
 
-This introductory flow is added just to demonstrate a simple data pipeline which extracts data via HTTP REST API, transforms that data in Python and then queries it using DuckDB. For this stage, a new separate Postgres database is created for the exercises. 
-
+This introductory flow is added just to demonstrate a simple data pipeline which extracts data via HTTP REST API, transforms that data in Python and then queries it using DuckDB. For this stage, a new separate Postgres database is created for the exercises.
 
 ```mermaid
 graph LR
@@ -201,10 +211,11 @@ Add the flow [`03_getting_started_data_pipeline.yaml`](flows/03_getting_started_
 
 #### Videos
 
-- **2.3.1 - Getting Started Pipeline**   
+- **2.3.1 - Getting Started Pipeline**  
   [![Create an ETL Pipeline with Postgres in Kestra](https://markdown-videos-api.jorgenkh.no/url?url=https%3A%2F%2Fyoutu.be%2F-KmwrCqRhic)](https://youtu.be/-KmwrCqRhic)
 
 #### Resources
+
 - [ETL Tutorial Video](https://go.kestra.io/de-zoomcamp/etl-tutorial)
 - [ETL in 3 Minutes](https://go.kestra.io/de-zoomcamp/etl-get-started)
 
@@ -233,16 +244,16 @@ graph LR
 
 The flow code: [`04_postgres_taxi.yaml`](flows/04_postgres_taxi.yaml).
 
-
 > [!NOTE]  
 > The NYC Taxi and Limousine Commission (TLC) Trip Record Data provided on the [nyc.gov](https://www.nyc.gov/site/tlc/about/tlc-trip-record-data.page) website is currently available only in a Parquet format, but this is NOT the dataset we're going to use in this course. For the purpose of this course, we'll use the **CSV files** available [here on GitHub](https://github.com/DataTalksClub/nyc-tlc-data/releases). This is because the Parquet format can be challenging to understand by newcomers, and we want to make the course as accessible as possible — the CSV format can be easily introspected using tools like Excel or Google Sheets, or even a simple text editor.
 
 #### Videos
 
-- **2.3.2 - Local DB: Load Taxi Data to Postgres**   
+- **2.3.2 - Local DB: Load Taxi Data to Postgres**  
   [![Local DB: Load Taxi Data to Postgres](https://markdown-videos-api.jorgenkh.no/url?url=https%3A%2F%2Fyoutu.be%2FZ9ZmmwtXDcU)](https://youtu.be/Z9ZmmwtXDcU)
 
 #### Resources
+
 - [Docker Compose with Kestra, Postgres and pgAdmin](docker-compose.yml)
 
 ### 2.3.3 Local DB: Learn Scheduling and Backfills
@@ -257,22 +268,26 @@ The flow code: [`05_postgres_taxi_scheduled.yaml`](flows/05_postgres_taxi_schedu
 
 - **2.3.3 - Scheduling and Backfills**  
   [![Scheduling and Backfills](https://markdown-videos-api.jorgenkh.no/url?url=https%3A%2F%2Fyoutu.be%2F1pu_C_oOAMA)](https://youtu.be/1pu_C_oOAMA)
+
 ---
 
 ## 2.4 ELT Pipelines in Kestra: Google Cloud Platform
 
-Now that you've learned how to build ETL pipelines locally using Postgres, we are ready to move to the cloud. In this section, we'll load the same Yellow and Green Taxi data to Google Cloud Platform (GCP) using: 
-1. Google Cloud Storage (GCS) as a data lake  
+Now that you've learned how to build ETL pipelines locally using Postgres, we are ready to move to the cloud. In this section, we'll load the same Yellow and Green Taxi data to Google Cloud Platform (GCP) using:
+
+1. Google Cloud Storage (GCS) as a data lake
 2. BigQuery as a data warehouse.
 
 ### 2.4.1 - ETL vs ELT
 
 In 2.3, we made a ETL pipeline inside of Kestra:
+
 - **Extract:** Firstly, we extract the dataset from GitHub
 - **Transform:** Next, we transform it with Python
 - **Load:** Finally, we load it into our Postgres database
 
 While this is very standard across the industry, sometimes it makes sense to change the order when working with the cloud. If you're working with a large dataset, like the Yellow Taxi data, there can be benefits to extracting and loading straight into a data warehouse, and then performing transformations directly in the data warehouse. When working with BigQuery, we will use ELT:
+
 - **Extract:** Firstly, we extract the dataset from GitHub
 - **Load:** Next, we load this dataset (in this case, a csv file) into a data lake (Google Cloud Storage)
 - **Transform:** Finally, we can create a table inside of our data warehouse (BigQuery) which uses the data from our data lake to perform our transformations.
@@ -287,15 +302,17 @@ Over the next few videos, we'll look at setting up BigQuery and transforming the
   [![ETL vs ELT](https://markdown-videos-api.jorgenkh.no/url?url=https%3A%2F%2Fyoutu.be%2FE04yurp1tSU)](https://youtu.be/E04yurp1tSU)
 
 #### Resources
+
 - [ETL vs ELT Video](https://go.kestra.io/de-zoomcamp/etl-vs-elt)
 - [Data Warehouse 101 Video](https://go.kestra.io/de-zoomcamp/data-warehouse-101)
 - [Data Lakes 101 Video](https://go.kestra.io/de-zoomcamp/data-lakes-101)
 
 ### 2.4.2 Setup Google Cloud Platform (GCP)
 
-Before we start loading data to GCP, we need to set up the Google Cloud Platform. 
+Before we start loading data to GCP, we need to set up the Google Cloud Platform.
 
 First, adjust the following flow [`06_gcp_kv.yaml`](flows/06_gcp_kv.yaml) to include your service account, GCP project ID, BigQuery dataset and GCS bucket name (_along with their location_) as KV Store values:
+
 - GCP_PROJECT_ID
 - GCP_LOCATION
 - GCP_BUCKET_NAME
@@ -311,6 +328,7 @@ If you haven't already created the GCS bucket and BigQuery dataset in the first 
   [![Setup Google Cloud Platform](https://markdown-videos-api.jorgenkh.no/url?url=https%3A%2F%2Fyoutu.be%2FTLGFAOHpOYM)](https://youtu.be/TLGFAOHpOYM)
 
 #### Resources
+
 - [Set up Google Cloud Service Account in Kestra](https://go.kestra.io/de-zoomcamp/google-sa)
 
 ### 2.4.3 GCP Workflow: Load Taxi Data to BigQuery
@@ -363,6 +381,7 @@ The flow code: [`09_gcp_taxi_scheduled.yaml`](flows/09_gcp_taxi_scheduled.yaml).
 This section builds on what you learned earlier in Module 2 to show you how AI can speed up workflow development.
 
 By the end of this section, you will:
+
 - Understand why context engineering matters when collaborating with LLMs
 - Use AI Copilot to build Kestra flows faster
 - Use Retrieval Augmented Generation (RAG) in data pipelines
@@ -400,6 +419,7 @@ Let's start by seeing what happens when AI lacks proper context.
 1. **Open ChatGPT in a private browser window** (to avoid any existing chat context): https://chatgpt.com
 
 2. **Enter this prompt:**
+
    ```
    Create a Kestra flow that loads NYC taxi data from a CSV file to BigQuery. The flow should extract data, upload to GCS, and load to BigQuery.
    ```
@@ -413,6 +433,7 @@ Let's start by seeing what happens when AI lacks proper context.
 #### Why Does This Happen?
 
 Large Language Models (LLMs) like GPT models from OpenAI are trained on data up to a specific point in time (knowledge cutoff). They don't automatically know about:
+
 - Software updates and new releases
 - Renamed plugins or changed APIs
 
@@ -421,10 +442,12 @@ This is the fundamental challenge of using AI: **the model can only work with in
 #### Key Learning: Context is Everything
 
 Without proper context:
+
 - ❌ Generic AI assistants hallucinate outdated or incorrect code
 - ❌ You can't trust the output for production use
 
 With proper context:
+
 - ✅ AI generates accurate, current, production-ready code
 - ✅ You can iterate faster by letting AI generate boilerplate workflow code
 
@@ -473,6 +496,7 @@ services:
 ```
 
 Then restart Kestra:
+
 ```bash
 cd 02-workflow-orchestration/docker
 export GEMINI_API_KEY="your-api-key-here"
@@ -502,7 +526,6 @@ docker compose up -d
 - **2.5.3 - AI Copilot in Kestra**  
   [![AI Copilot in Kestra](https://markdown-videos-api.jorgenkh.no/url?url=https%3A%2F%2Fyoutu.be%2F3IbjHfC8bMg)](https://youtu.be/3IbjHfC8bMg)
 
-
 ### 2.5.4 Bonus: Retrieval Augmented Generation (RAG)
 
 To further learn how to provide context to your prompts, this bonus section demonstrates how to use RAG.
@@ -510,6 +533,7 @@ To further learn how to provide context to your prompts, this bonus section demo
 #### What is RAG?
 
 **RAG (Retrieval Augmented Generation)** is a technique that:
+
 1. **Retrieves** relevant information from your data sources
 2. **Augments** the AI prompt with this context
 3. **Generates** a response grounded in real data
@@ -528,6 +552,7 @@ graph LR
 ```
 
 **The Process:**
+
 1. **Ingest documents**: Load documentation, release notes, or other data sources
 2. **Create embeddings**: Convert text into vector representations using an LLM
 3. **Store embeddings**: Save vectors in Kestra's KV Store (or a vector database)
@@ -539,6 +564,7 @@ graph LR
 **Objective:** Understand how RAG eliminates hallucinations by grounding LLM responses in real data.
 
 **Part A: Without RAG**
+
 1. Navigate to the [`10_chat_without_rag.yaml`](flows/10_chat_without_rag.yaml) flow in your Kestra UI
 2. Click **Execute**
 3. Wait for the execution to complete
@@ -550,6 +576,7 @@ graph LR
    - Based only on the model's training data (which may be outdated)
 
 **Part B: With RAG**
+
 1. Navigate to the [`11_chat_with_rag.yaml`](flows/11_chat_with_rag.yaml) flow
 2. Click **Execute**
 3. Watch the execution:
@@ -572,6 +599,7 @@ graph LR
 #### Additional AI Resources
 
 Kestra Documentation:
+
 - [AI Tools Overview](https://kestra.io/docs/ai-tools)
 - [AI Copilot](https://kestra.io/docs/ai-tools/ai-copilot)
 - [RAG Workflows](https://kestra.io/docs/ai-tools/ai-rag-workflows)
@@ -579,10 +607,12 @@ Kestra Documentation:
 - [Kestra Blueprints](https://kestra.io/blueprints) - Pre-built workflow examples
 
 Kestra Plugin Documentation:
+
 - [AI Plugin](https://kestra.io/plugins/plugin-ai)
 - [RAG Tasks](https://kestra.io/plugins/plugin-ai/rag)
 
 External Documentation:
+
 - [Google Gemini](https://ai.google.dev/docs)
 - [Google AI Studio](https://aistudio.google.com/)
 
@@ -593,7 +623,7 @@ External Documentation:
 
 ## 2.6 Bonus: Deploy to the Cloud (Optional)
 
-Now that we've got all our pipelines working and we know how to quickly create new flows with Kestra's AI Copilot, we can deploy Kestra to the cloud so it can continue to orchestrate our scheduled pipelines. 
+Now that we've got all our pipelines working and we know how to quickly create new flows with Kestra's AI Copilot, we can deploy Kestra to the cloud so it can continue to orchestrate our scheduled pipelines.
 
 In this bonus section, we'll cover how you can deploy Kestra on Google Cloud and automatically sync your workflows from a Git repository.
 
@@ -615,10 +645,10 @@ Note: When committing your workflows to Kestra, make sure your workflow doesn't 
 - Join our [Slack community](https://go.kestra.io/de-zoomcamp/slack) if you have any questions
 - Find all the videos in this [YouTube Playlist](https://go.kestra.io/de-zoomcamp/yt-playlist)
 
-
 ### Troubleshooting tips
 
 If you face any issues with Kestra flows in Module 2, make sure to use the following Docker images/ports:
+
 - `image: kestra/kestra:v1.1` - pin your Kestra Docker image to this version so we can ensure reproducibility; do NOT use `kestra/kestra:develop` as this is a bleeding-edge development version that might contain bugs
 - `postgres:18` — make sure to pin your Postgres image to version 18
 - If you run `pgAdmin` or something else on port 8080, you can adjust Kestra `docker-compose` to use a different port, e.g. change port mapping to 18080 instead of 8080, and then access Kestra UI in your browser from http://localhost:18080/ instead of from http://localhost:8080/
@@ -626,12 +656,13 @@ If you face any issues with Kestra flows in Module 2, make sure to use the follo
 If you are still facing any issues, stop and remove your existing Kestra + Postgres containers and start them again using `docker-compose up -d`. If this doesn't help, post your question on the DataTalksClub Slack or on Kestra's Slack http://kestra.io/slack.
 
 If you encounter similar errors to:
+
 ```
-BigQueryError{reason=invalid, location=null, 
-message=Error while reading table: kestra-sandbox.zooomcamp.yellow_tripdata_2020_01, 
-error message: CSV table references column position 17, but line contains only 14 columns.; 
-line_number: 2103925 byte_offset_to_start_of_line: 194863028 
-column_index: 17 column_name: "congestion_surcharge" column_type: NUMERIC 
+BigQueryError{reason=invalid, location=null,
+message=Error while reading table: kestra-sandbox.zooomcamp.yellow_tripdata_2020_01,
+error message: CSV table references column position 17, but line contains only 14 columns.;
+line_number: 2103925 byte_offset_to_start_of_line: 194863028
+column_index: 17 column_name: "congestion_surcharge" column_type: NUMERIC
 File: gs://anna-geller/yellow_tripdata_2020-01.csv}
 ```
 
@@ -639,7 +670,7 @@ It means that the CSV file you're trying to load into BigQuery has a mismatch in
 
 ---
 
-## Homework 
+## Homework
 
 See the [2026 cohort folder](../cohorts/2026/02-workflow-orchestration/homework.md)
 
@@ -647,15 +678,15 @@ See the [2026 cohort folder](../cohorts/2026/02-workflow-orchestration/homework.
 
 # Community notes
 
-Did you take notes? You can share them by creating a PR to this file! 
+Did you take notes? You can share them by creating a PR to this file!
 
-* Add your notes above this line
+- Add your notes above this line
 
 ---
 
 # Previous Cohorts
 
-* 2022: [notes](../cohorts/2022/week_2_data_ingestion#community-notes) and [videos](../cohorts/2022/week_2_data_ingestion)
-* 2023: [notes](../cohorts/2023/week_2_workflow_orchestration#community-notes) and [videos](../cohorts/2023/week_2_workflow_orchestration)
-* 2024: [notes](../cohorts/2024/02-workflow-orchestration#community-notes) and [videos](../cohorts/2024/02-workflow-orchestration)
-* 2025: [notes](../cohorts/2025/02-workflow-orchestration/README.md#community-notes) and [videos](../cohorts/2025/02-workflow-orchestration)
+- 2022: [notes](../cohorts/2022/week_2_data_ingestion#community-notes) and [videos](../cohorts/2022/week_2_data_ingestion)
+- 2023: [notes](../cohorts/2023/week_2_workflow_orchestration#community-notes) and [videos](../cohorts/2023/week_2_workflow_orchestration)
+- 2024: [notes](../cohorts/2024/02-workflow-orchestration#community-notes) and [videos](../cohorts/2024/02-workflow-orchestration)
+- 2025: [notes](../cohorts/2025/02-workflow-orchestration/README.md#community-notes) and [videos](../cohorts/2025/02-workflow-orchestration)
