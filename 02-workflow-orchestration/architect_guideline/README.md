@@ -1,0 +1,1 @@
+- Guideline for week 2
