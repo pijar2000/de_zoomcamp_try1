@@ -1,13 +1,13 @@
 ## Before you Start
 
 Download the green taxi trips data for November 2025:
-- green taxi trips has 2 file, trip data and zone data
+- green taxi trips has 2 file, trip data and zone data (This is parquet type file)
 
 ```bash
 wget https://d37ci6vzurychx.cloudfront.net/trip-data/green_tripdata_2025-11.parquet
 ```
 
-You will also need the dataset with zones:
+You will also need the dataset with zones: (This is csv type file)
 
 ```bash
 wget https://github.com/DataTalksClub/nyc-tlc-data/releases/download/misc/taxi_zone_lookup.csv
