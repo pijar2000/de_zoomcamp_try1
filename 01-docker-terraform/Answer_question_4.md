@@ -24,5 +24,5 @@ max_trip["lpep_pickup_datetime"].dt.date
 ```
 
 <p align="center">
-  <img width="60%" src="images/question_4.png" alt="answer_question_4">
+  <img width="60%" src="../images/question_4.png" alt="answer_question_4">
 </p>
